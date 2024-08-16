@@ -1,9 +1,11 @@
-import  Koa  from  "koa" ; 
+import Koa from "koa";
 
-const app = new  Koa (); 
+const app = new Koa();
 
-const port = 3000 ; 
+const port = 3000;
 
-app. listen (port, () => { 
-  console . log ( `🚀 サーバーはポート http://localhost: ${port} / で実行されています` ); 
+app.listen(port, () => {
+	console.log(
+		`🚀 サーバーはポート http://localhost: ${port} / で実行されています`,
+	);
 });
