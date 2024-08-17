@@ -1,0 +1,9 @@
+name: GitHub Actions
+
+on [push]
+
+jobs:
+  check_lint_format:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npx @biomejs/biome check --write ./
