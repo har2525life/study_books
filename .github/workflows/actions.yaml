@@ -3,7 +3,19 @@ name: GitHub Actions
 on: [push]
 
 jobs:
-  check_lint_format:
-    runs-on: ubuntu-latest
-    steps:
-      - run: npx @biomejs/biome check --write ./
+    check_lint_format:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out the repository
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "16" # 必要に応じてNode.jsのバージョンを指定
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Run biome check
+              run: npx @biomejs/biome check --write ./
